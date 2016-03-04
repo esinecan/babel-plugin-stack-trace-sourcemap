@@ -10,27 +10,31 @@
  */
 
 export default ({types: t}) => {
+    if (process.env._.indexOf('babel') > -1) {
+        console.log('run add import');
+        return {
+            visitor: {
+                Program (path, {file}) {
+                    let id;
 
-    return {
-        visitor: {
-            Program (path, {file}) {
-                let id;
+                    id = file.addImport(
+                        'source-map-support',
+                        'install',
+                        '_sourceMapSupport'
+                    );
 
-                id = file.addImport(
-                    'source-map-support',
-                    'install',
-                    '_sourceMapSupport'
-                );
-
-                path.traverse({
-                    ImportDeclaration(path) {
-
-                        if (path.node.source.value === 'source-map-support') {
-                            path.insertAfter(t.ExpressionStatement(t.CallExpression(t.identifier('_sourceMapSupport'), [])));
+                    path.traverse({
+                        ImportDeclaration(path) {
+                            if (path.node.source.value === 'source-map-support') {
+                                path.insertAfter(t.ExpressionStatement(t.CallExpression(t.identifier('_sourceMapSupport'), [])));
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
-        }
-    };
+        };
+    } else {
+        console.log('don\'t run add import');
+        return {};
+    }
 };
