@@ -11,7 +11,6 @@
 
 export default ({types: t}) => {
     if (process.env._.indexOf('babel') > -1) {
-        console.log('run add import');
         return {
             visitor: {
                 Program (path, {file}) {
@@ -34,7 +33,6 @@ export default ({types: t}) => {
             }
         };
     } else {
-        console.log('don\'t run add import');
         return {};
     }
 };

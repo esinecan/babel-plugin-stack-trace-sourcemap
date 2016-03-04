@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-source-map-support-for-6",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Babel6 verion fork.A Babel plugin which automatically makes stack traces source-map aware",
   "repository": "mariodu/babel-plugin-source-map-support",
   "license": "Artistic-2.0",
