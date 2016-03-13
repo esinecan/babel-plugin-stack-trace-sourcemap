@@ -10,7 +10,7 @@
  */
 
 export default ({types: t}) => {
-    if (process.env._.indexOf('babel') > -1) {
+    if (process.env.__BABEL_RUN_ENV__ !== 'register') {
         return {
             visitor: {
                 Program (path, {file}) {
