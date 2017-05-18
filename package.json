@@ -1,5 +1,6 @@
 {
   "name": "babel-plugin-stack-trace-sourcemap",
+  "version": "1.0.1",
   "description": "A Babel 6 plugin that automatically makes stack traces sourcemap aware. Requires V8.",
   "repository": "khell/babel-plugin-stack-trace-sourcemap",
   "license": "Artistic-2.0",
