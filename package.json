@@ -32,7 +32,20 @@
   "scripts": {
     "test": "grunt test"
   },
-  "author": ["mariodu - <dujiakun@gmail.com>", "chocolateboy - <chocolate@cpan.org>"],
+  "author": {
+    "name": "chocolateboy",
+    "email": "chocolate@cpan.org"
+  },
+  "contributors": [
+    {
+      "name": "Cameron Yan (Khell)",
+      "email": "git@khell.org"
+    },
+    {
+      "name": "mariodu",
+      "email": "dujiakun@gmail.com"
+    }
+  ],
   "keywords": [
     "babel6",
     "babel-plugin",
