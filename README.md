@@ -1,7 +1,6 @@
-# babel-plugin-source-map-support
+# babel-plugin-stack-trace-sourcemap 
 
-[![npm status](http://img.shields.io/npm/v/babel-plugin-source-map-support.svg)](https://www.npmjs.org/package/babel-plugin-source-map-support)
-[![build status](https://secure.travis-ci.org/chocolateboy/babel-plugin-source-map-support.svg)](http://travis-ci.org/chocolateboy/babel-plugin-source-map-support)
+[![npm status](http://img.shields.io/npm/v/babel-plugin-stack-trace-sourcemap.svg)](https://www.npmjs.org/package/babel-plugin-stack-trace-sourcemap)
 
 A Babel plugin which automatically makes stack traces source-map aware
 
