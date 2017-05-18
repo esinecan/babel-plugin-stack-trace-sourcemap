@@ -30,6 +30,7 @@
     "source-map-support": "~0.4.0"
   },
   "scripts": {
+    "build": "grunt compile",
     "test": "grunt test"
   },
   "author": {
