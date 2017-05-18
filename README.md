@@ -15,7 +15,11 @@ A Babel plugin which automatically makes stack traces source-map aware
 
 ## INSTALL
 
-    npm install babel-plugin-source-map-support
+    npm install babel-plugin-stack-trace-sourcemap --save-dev
+
+or
+
+    yarn add babel-plugin-stack-trace-sourcemap -D
 
 ## SYNOPSIS
 
@@ -55,7 +59,7 @@ test();
 
 ## DESCRIPTION
 
-This is a [Babel](https://www.npmjs.com/package/babel) [plugin](https://babeljs.io/docs/advanced/plugins/)
+This is a [Babel 6](https://www.npmjs.com/package/babel) [plugin](https://babeljs.io/docs/advanced/plugins/)
 which prepends a statement equivalent to the following to source files:
 
 ```javascript
@@ -73,6 +77,17 @@ though it is harmless in other environments.
 The source-map-support module only needs to be registered in the top-level file of an application,
 but it no-ops if it has already been loaded, so there is no harm in registering it in every file.
 
+You may specify a custom import declaration and whether to immediately execute a default export function in your Babel config. This is the effective default configuration:
+
+```javascript
+'plugins': [
+    ['babel-plugin-stack-trace-sourcemap', {
+        'importOverride': ['source-map-support', 'install', '_sourceMapSupport'],
+        'execute': true
+    }]
+]
+```
+
 ### CAVEATS
 
 Source maps must currently be inline. While the source-map-support module provides a way
@@ -86,15 +101,16 @@ this plugin.
 
 ## VERSION
 
-0.0.1
+1.0.0
 
 ## AUTHOR
 
-[chocolateboy](mailto:chocolate@cpan.org)
+Forked by: [Cameron Yan (Khell)](mailto:git@khell.org)
+Original author: [chocolateboy](mailto:chocolate@cpan.org)
 
 ## COPYRIGHT AND LICENSE
 
-Copyright © 2015 by chocolateboy
+Copyright © 2015-2017 by khell, chocolateboy
 
 This module is free software; you can redistribute it and/or modify it under the
 terms of the [Artistic License 2.0](http://www.opensource.org/licenses/artistic-license-2.0.php).
